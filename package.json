@@ -1,12 +1,21 @@
 {
-  "name": "@enhance/arc-plugin-styles",
-  "version": "5.0.6",
-  "description": "Plugin for generating enhance CSS utility classes",
+  "name": "@paramour/arc-plugin-paramour-css",
+  "version": "0.0.1",
+  "description": "Plugin for generating Paramour CSS in Architect apps",
   "license": "Apache-2.0",
-  "author": "dam",
-  "homepage": "https://github.com/enhance-dev/arc-plugin-styles#readme",
+  "contributors": [
+    {
+      "name": "Kristofer Joseph",
+      "url": "https://github.com/kristoferjoseph"
+    },
+    {
+      "name": "Cole Peters",
+      "url": "https://github.com/colepeters"
+    }
+  ],
+  "homepage": "https://github.com/paramours/arc-plugin-paramour-css",
   "bugs": {
-    "url": "https://github.com/enhance-dev/arc-plugin-styles/issues"
+    "url": "https://github.com/paramours/arc-plugin-paramour-css/issues"
   },
   "main": "./src/index.js",
   "exports": {
@@ -16,7 +25,7 @@
     "./get-styles.js": "./src/get-styles.js"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "files": [
     "./src/*",
@@ -28,11 +37,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enhance-dev/arc-plugin-styles.git"
+    "url": "git+https://github.com/paramours/arc-plugin-paramour-css.git"
   },
   "dependencies": {
     "@architect/functions": "^8.0.4",
-    "@enhance/styles": "^6.4.0"
+    "@paramour/css": "^0.0.1"
   },
   "devDependencies": {
     "@architect/eslint-config": "^2.0.1",
@@ -57,6 +66,10 @@
   },
   "keywords": [
     "architect",
-    "enhance"
+    "enhance",
+    "paramour",
+    "css",
+    "parametric",
+    "style"
   ]
 }
