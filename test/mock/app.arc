@@ -5,8 +5,8 @@ styl-mock
 get /
 
 @plugins
-enhance/arc-plugin-styles
+paramour/arc-plugin-paramour-css
   src ../..
 
-@enhance-styles
-config styles-config.json
+@paramour-css
+config config.mjs

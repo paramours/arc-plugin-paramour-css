@@ -1,27 +1,27 @@
-const { readFileSync } = require('node:fs')
 const { join } = require('node:path')
-const defaultConfig = require('@enhance/styles/config.json')
 
 /**
- * Create configuration for enhance-styles creation
+ * Create configuration for Paramour CSS creation
  * @param {object} params
  * @param {object} params.arc
  * @param {object} params.inventory
- * @returns {{configPath: null|string, cwd: string, stylesConfig: string}}
+ * @returns Promise<{configPath: null|string, cwd: string, stylesConfig: Object}>
  */
-function createConfig ({ arc, inventory }) {
-  const pluginConfig = Object.fromEntries(arc['enhance-styles'] || [])
+async function createConfig ({ arc, inventory }) {
+  const { default: defaultConfig } = await import('@paramour/css/styleguide.mjs')
+  const pluginConfig = Object.fromEntries(arc['paramour-css'] || [])
   const cwd = inventory.inv._project.cwd
 
-  let stylesConfig = null
   let configPath = null
+  let stylesConfig = null
 
   if (pluginConfig?.config) {
     configPath = join(cwd, pluginConfig.config)
-    stylesConfig = readFileSync(configPath, 'utf-8')
+    const { default: config } = await import(configPath)
+    stylesConfig = config
   }
   else {
-    stylesConfig = JSON.stringify(defaultConfig)
+    stylesConfig = defaultConfig
   }
 
   return {

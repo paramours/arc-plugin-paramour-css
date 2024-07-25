@@ -1,7 +1,7 @@
 import { join } from 'node:path'
 import { readFileSync } from 'node:fs'
 import arc from '@architect/functions'
-const CSS_FILENAME = 'generated.css'
+const CSS_FILENAME = 'paramour.generated.css'
 
 export const handler = arc.http.async(async function () {
   const stylesPath = join(
@@ -9,7 +9,7 @@ export const handler = arc.http.async(async function () {
     'node_modules',
     '@architect',
     'shared',
-    'enhance-styles',
+    'paramour-css',
     CSS_FILENAME,
   )
 

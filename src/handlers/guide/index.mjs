@@ -1,7 +1,6 @@
 import { join } from 'node:path'
-import { readFileSync } from 'node:fs'
 import arc from '@architect/functions'
-const CONFIG_FILENAME = 'config.json'
+const CONFIG_FILENAME = 'config.mjs'
 
 export const handler = arc.http.async(async function () {
   // Just return the config for now
@@ -10,10 +9,12 @@ export const handler = arc.http.async(async function () {
     'node_modules',
     '@architect',
     'shared',
-    'enhance-styles',
+    'paramour-css',
     CONFIG_FILENAME,
   )
-  const json = JSON.parse(readFileSync(configPath, { encoding: 'utf-8' }))
+
+  const { default: config } = await import(configPath)
+
   // TODO: create an HTML style guide
-  return { json }
+  return { json: config }
 })

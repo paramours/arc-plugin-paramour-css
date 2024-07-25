@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "lint": "eslint src test --fix",
-    "test": "npm run lint && tape test/**/*.*js | tap-arc"
+    "test": "npm run lint && tape ./test/**/**.test.*js | tap-arc"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@architect/functions": "^8.0.4",
-    "@paramour/css": "^0.0.1"
+    "@paramour/css": "^0.0.2"
   },
   "devDependencies": {
     "@architect/eslint-config": "^2.0.1",

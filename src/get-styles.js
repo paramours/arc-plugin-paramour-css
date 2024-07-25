@@ -1,7 +1,7 @@
 const { join } = require('node:path')
 const { readFileSync } = require('node:fs')
-const CSS_FILENAME = 'generated.css'
-const CSS_PATH = '/enhance-styles.css'
+const CSS_FILENAME = 'paramour.generated.css'
+const CSS_PATH = '/paramour.css'
 let css = null
 
 /**
@@ -24,19 +24,19 @@ function getStyleTag () {
       'node_modules',
       '@architect',
       'shared',
-      'enhance-styles',
+      'paramour-css',
       CSS_FILENAME,
     )
 
     try {
-      css = readFileSync(stylesFilePath, { encoding: 'utf-8' })
+      css = readFileSync(stylesFilePath, 'utf-8')
     }
     catch (error) {
       console.debug(`Unable to read ${CSS_FILENAME}`)
     }
   }
 
-  return `<style>${css || '/* enhance-styles placeholder */'}</style>`
+  return `<style>${css || '/* Paramour placeholder */'}</style>`
 }
 
 /** @returns {string} <link> tag with reference to generated stylesheet */
