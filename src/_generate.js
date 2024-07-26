@@ -25,7 +25,7 @@ async function generateAndSave ({ cwd, configPath, stylesConfig }, write = true)
 
     mkdirSync(outputDir, { recursive: true })
     writeFileSync(filePath, generatedStyles)
-    writeFileSync(join(outputDir, CONFIG_FILENAME), configFile) // TODO: it's getting passed a js object but it needs a buffer!
+    writeFileSync(join(outputDir, CONFIG_FILENAME), configFile)
 
   }
 
