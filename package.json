@@ -1,6 +1,6 @@
 {
   "name": "@paramour/arc-plugin-paramour-css",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Plugin for generating Paramour CSS in Architect apps",
   "license": "Apache-2.0",
   "contributors": [
