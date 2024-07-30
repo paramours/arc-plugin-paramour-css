@@ -1,18 +1,18 @@
 const createConfig = require('./_create-config')
 const generateAndSave = require('./_generate')
 const { getStyles, getLinkTag, getPath, getStyleTag } = require('./get-styles')
-const TEMP_DIR_NAME = '.enhance'
+const TEMP_DIR_NAME = '.paramour'
 
 const hydrate = {
   async copy ({ arc, copy, inventory }) {
     const params = { arc, inventory }
 
-    const config = createConfig(params)
+    const config = await createConfig(params)
     await generateAndSave(config)
 
     await copy({
       source: TEMP_DIR_NAME, // relative to the project root
-      target: '@architect/shared/enhance-styles',
+      target: '@architect/shared/paramour-css',
     })
   },
 }
@@ -20,10 +20,10 @@ const hydrate = {
 const sandbox = {
   async watcher (params) {
     const { filename } = params
-    const config = createConfig(params)
+    const config = await createConfig(params)
 
     if (config.configPath && config.configPath === filename) {
-      console.log('  Enhance Styles: config changed, rebuilding.')
+      console.log('  Paramour: CSS config changed, rebuilding.')
       await generateAndSave(config)
     }
   },
@@ -34,7 +34,7 @@ const set = {
     return [
       {
         method: 'get',
-        path: '/enhance-styles.css',
+        path: '/paramour.css',
         src: `${__dirname}/handlers/css`,
         config: { views: false },
       },
