@@ -21,6 +21,7 @@ async function createConfig ({ arc, inventory }) {
     stylesConfig = config
   }
   else {
+    configPath = join(cwd, 'node_modules', '@paramour', 'css', 'styleguide.mjs')
     stylesConfig = defaultConfig
   }
 

@@ -8,6 +8,7 @@ const CONFIG_FILENAME = 'config.mjs'
  * Run Paramour and save result
  * @param {object} config
  * @param {string} config.cwd project working dir
+ * @param {string} config.configPath jath to Paramour config
  * @param {string} config.stylesConfig Paramour config object
  * @param {boolean} write should write to disk
  * @returns {Promise<{generatedStyles: string, filePath: null|string}>}
