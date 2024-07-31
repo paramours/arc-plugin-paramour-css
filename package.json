@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@architect/functions": "^8.0.4",
-    "@paramour/css": "^0.0.3"
+    "@paramour/css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "@architect/eslint-config": "^2.0.1",
