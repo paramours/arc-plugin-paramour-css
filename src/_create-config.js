@@ -17,7 +17,7 @@ async function createConfig ({ arc, inventory }) {
 
   if (pluginConfig?.config) {
     configPath = join(cwd, pluginConfig.config)
-    const { default: config } = await import(configPath)
+    const { default: config } = await import(`${configPath}?${Date.now()}`) // bypass module cache; this should be improved to avoid memory leaks
     stylesConfig = config
   }
   else {
