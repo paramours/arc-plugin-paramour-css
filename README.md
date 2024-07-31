@@ -25,7 +25,7 @@ paramour/arc-plugin-paramour-css
 # Enable the plugin
 @paramour-css
 # with an optional configuration file:
-config ./paramour.js
+config ./paramour.mjs
 ```
 
 ### Utility functions
